@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="192.0" prefWidth="313.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="119.0" layoutY="14.0" text="비밀번호 변경" />
+      <Label layoutX="31.0" layoutY="45.0" text="현재 비밀번호" />
+      <Label layoutX="31.0" layoutY="71.0" text="새 비밀번호" />
+      <Label layoutX="31.0" layoutY="95.0" text="새 비밀번호 확인" />
+      <PasswordField fx:id="oldPw" layoutX="122.0" layoutY="41.0" />
+      <PasswordField fx:id="newPw" layoutX="122.0" layoutY="67.0" />
+      <PasswordField fx:id="newConfirmPw" layoutX="122.0" layoutY="91.0" />
+      <Button fx:id="closeBt" layoutX="100.0" layoutY="150.0" mnemonicParsing="false" text="취소" />
+      <Button fx:id="changeBt" layoutX="175.0" layoutY="150.0" mnemonicParsing="false" text="변경" />
+      <Label id="checkPw" alignment="CENTER" layoutX="82.0" layoutY="123.0" prefWidth="150.0" textFill="RED" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.user.MyTicket">
+   <children>
+   	  <Label id="userId" fx:id="userId" prefHeight="14.0" prefWidth="88.0" visible="false" />	
+      <ScrollPane hbarPolicy="NEVER" layoutY="40.0" prefHeight="290.0" prefWidth="600.0">
+         <content>
+            <GridPane fx:id="ticketList">
+              
+             </GridPane>
+         </content>
+      </ScrollPane>
+                   
+      <Button fx:id="closeBt" layoutX="550.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeAction" text="닫기" />
+      <Button fx:id="printBt" layoutX="470.0" layoutY="10.0" mnemonicParsing="false" onAction="#printAction" text="인쇄하기" />
+      
+   </children>
+</AnchorPane>

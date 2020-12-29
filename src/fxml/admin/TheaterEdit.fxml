@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="400.0" minWidth="780.0" prefHeight="391.0" prefWidth="780.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="controller.admin.TheaterEdit">
+   <children>
+   	<Label fx:id="userId" visible="false" />
+      <AnchorPane prefHeight="400.0" prefWidth="300.0">
+         <children>
+            <AnchorPane prefHeight="41.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="backGo" layoutX="5.0" layoutY="10.0" mnemonicParsing="false" onAction="#backGo" text="뒤로가기" />
+                  <Button fx:id="newBt" layoutX="229.0" layoutY="10.0" mnemonicParsing="false" onAction="#newAction" prefHeight="22.0" prefWidth="64.0" text="신규등록" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="5.0" layoutY="50.0" prefHeight="340.0" prefWidth="290.0" style="-fx-border-color: black;">
+               <children>
+                  <Label layoutX="107.0" layoutY="14.0" text="극장관리">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="60.0" prefWidth="50.0" text="극장NO" />
+                  <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="85.0" prefWidth="50.0" text="지역" />
+                  <Label alignment="CENTER_RIGHT" layoutX="50.0" layoutY="110.0" prefWidth="50.0" text="극장명" />
+                  <Button fx:id="addAndModifyBt" layoutX="66.0" layoutY="200.0" mnemonicParsing="false" onAction="#addAndModifyAction" text="등록/수정" />
+                  <Button fx:id="delBt" layoutX="159.0" layoutY="200.0" mnemonicParsing="false" onAction="#delAction" text="삭제" />
+                  <ComboBox fx:id="regionCombo" layoutX="110.0" layoutY="81.0" prefWidth="100.0">
+                  		<items>
+	            		<FXCollections fx:factory="observableArrayList">
+	            			<String fx:value="서울" />
+	            			<String fx:value="경기" />
+	            			<String fx:value="인천" />
+	            			<String fx:value="강원" />
+	            			<String fx:value="대전" />
+	            			<String fx:value="대구" />
+	            			<String fx:value="부산" />
+	            			<String fx:value="광주" />
+	            			<String fx:value="제주" />
+	            		</FXCollections>
+            		</items>
+                  </ComboBox>
+                  <TextField fx:id="numTf" layoutX="110.0" layoutY="56.0" prefWidth="100.0" />
+                  <TextField fx:id="nameTf" layoutX="110.0" layoutY="106.0" prefWidth="100.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="300.0" prefHeight="400.0" prefWidth="480.0" style="-fx-border-color: black;">
+         <children>
+            <TableView fx:id="theaterTable" layoutX="10.0" layoutY="150.0" prefHeight="226.0" prefWidth="460.0">
+              <columns>
+                <TableColumn fx:id="region" editable="true" prefWidth="75.0" resizable="false" sortable="false" text="지역" />
+                <TableColumn fx:id="num" editable="true" prefWidth="81.0" resizable="false" sortable="false" text="극장NO" />
+                <TableColumn fx:id="name" editable="true" prefWidth="231.0" resizable="false" sortable="false" text="극장명" />
+                <TableColumn fx:id="count" editable="true" prefWidth="70.0" resizable="false" sortable="false" text="상영관수" />
+              </columns>
+            </TableView>
+            <Label layoutX="249.0" layoutY="79.0" text="극장명" />
+            <TextField fx:id="searchNameTf" layoutX="289.0" layoutY="75.0" />
+            <Label layoutX="31.0" layoutY="79.0" text="지역" />
+            <ComboBox fx:id="searchRegion" layoutX="66.0" layoutY="75.0" prefHeight="22.0" prefWidth="161.0">
+            	<items>
+            		<FXCollections fx:factory="observableArrayList">
+            			<String fx:value="전체" />
+            			<String fx:value="서울" />
+            			<String fx:value="경기" />
+            			<String fx:value="인천" />
+            			<String fx:value="강원" />
+            			<String fx:value="대전" />
+            			<String fx:value="대구" />
+            			<String fx:value="부산" />
+            			<String fx:value="광주" />
+            			<String fx:value="제주" />
+            		</FXCollections>
+            	</items>
+            </ComboBox>
+            <Button fx:id="searchBt" layoutX="177.0" layoutY="111.0" mnemonicParsing="false" onAction="#searchAction" text="검색" />
+            <Button fx:id="resetBt" layoutX="266.0" layoutY="111.0" mnemonicParsing="false" onAction="#resetAction" text="초기화" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

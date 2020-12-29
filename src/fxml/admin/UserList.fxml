@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.admin.UserList">
+   <children>
+   		<Label fx:id="userId" visible="false" />
+      <TableView fx:id="userListTable" layoutX="10.0" layoutY="120.0" prefHeight="470.0" prefWidth="780.0">
+        <columns>
+          <TableColumn fx:id="dbuserId" prefWidth="130.0" resizable="false" text="ID" />
+          <TableColumn fx:id="dbuserName" prefWidth="100.0" resizable="false" text="이름" />
+            <TableColumn fx:id="dbuserTel" prefWidth="120.0" resizable="false" text="전화번호" />
+            <TableColumn fx:id="dbuserAddr" minWidth="0.0" prefWidth="430.0" resizable="false" text="주소" />
+        </columns>
+      </TableView>
+      <Button fx:id="backGo" layoutX="726.0" layoutY="10.0" mnemonicParsing="false" onAction="#backGo" text="뒤로가기" />
+      <Label layoutX="10.0" layoutY="10.0" text="회원목록">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="200.0" layoutY="40.0" prefHeight="70.0" prefWidth="405.0" style="-fx-border-color: black;">
+         <children>
+            <TextField fx:id="searchTf" layoutX="120.0" layoutY="35.0" prefWidth="160.0" />
+            <ComboBox fx:id="searchCombo" layoutX="10.0" layoutY="35.0" prefHeight="22.0" prefWidth="100.0" >
+            	<items>
+            		<FXCollections fx:factory="observableArrayList">
+            			<String fx:value="아이디" />
+            			<String fx:value="이름" />
+            			<String fx:value="전화번호" />
+            			<String fx:value="주소" />
+            		</FXCollections>
+           		</items>
+            </ComboBox>
+            <Button fx:id="searchBt" layoutX="290.0" layoutY="35.0" mnemonicParsing="false" onAction="#searchAction" text="검색" />
+            <Label layoutX="10.0" layoutY="10.0" text="회원검색" />
+            <Button fx:id="resetBt" layoutX="340.0" layoutY="35.0" mnemonicParsing="false" onAction="#resetAction" prefWidth="55.0" text="초기화" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

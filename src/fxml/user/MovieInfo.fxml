@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="800.0" style="-fx-background-color: #fef8dc;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.user.MovieInfo">
+   <children>
+   <Label fx:id="userId" visible="false" />
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutY="223.0" prefHeight="495.0" prefWidth="800.0" style="-fx-background-color: #fef8dc; -fx-border-color: black;" vbarPolicy="ALWAYS">
+         <content>
+            <GridPane fx:id="movieList" prefWidth="785.0" style="-fx-background-color: #fef8dc;">
+              
+            </GridPane>
+         </content>
+      </ScrollPane>
+      <Label layoutX="14.0" layoutY="14.0" text="영화정보" />
+      <AnchorPane layoutX="284.0" layoutY="55.0" prefHeight="135.0" prefWidth="233.0" style="-fx-border-color: black;">
+         <children>
+            <TextField fx:id="searchTf" layoutX="67.0" layoutY="68.0" prefHeight="22.0" prefWidth="143.0" />
+            <ComboBox fx:id="searchGenre" layoutX="67.0" layoutY="40.0" prefHeight="22.0" prefWidth="100.0">
+            	<items>
+            		<FXCollections fx:factory="observableArrayList">
+            			<String fx:value="전체" />	<String fx:value="가족" />	<String fx:value="공포/호러" />	<String fx:value="드라마" />
+            			<String fx:value="SF" />	<String fx:value="멜로/로맨스" />	<String fx:value="코미디" />	<String fx:value="애니메이션" />
+            			<String fx:value="느와르" />	<String fx:value="무협" />	<String fx:value="뮤직" />	<String fx:value="미스터리" />
+            			<String fx:value="범죄" />	<String fx:value="스릴러" />	<String fx:value="스포츠" />	<String fx:value="아동" />
+            			<String fx:value="액션" />	<String fx:value="역사" />	<String fx:value="전쟁" />	<String fx:value="재난" />
+            			<String fx:value="판타지" />
+            		</FXCollections>
+            	</items>
+            </ComboBox>
+            <Label layoutX="32.0" layoutY="44.0" text="장르" />
+            <Button fx:id="searchBt" layoutX="67.0" layoutY="96.0" mnemonicParsing="false" onAction="#searchAction" prefHeight="22.0" prefWidth="52.0" text="검색" />
+            <Button fx:id="resetBt" layoutX="134.0" layoutY="96.0" mnemonicParsing="false" onAction="#resetAction" text="초기화" />
+            <Label layoutX="93.0" layoutY="14.0" text="영화검색" />
+            <Label layoutX="20.0" layoutY="72.0" text="영화명" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="backGo" layoutX="722.0" layoutY="10.0" mnemonicParsing="false" onAction="#backGo" text="뒤로가기" />
+      <Label layoutX="14.0" layoutY="202.0" text="영화목록" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.admin.MovieEdit">
+   <children>
+   	<Label fx:id="userId" visible="false" />
+      <AnchorPane prefHeight="720.0" prefWidth="300.0">
+         <children>
+            <AnchorPane prefHeight="41.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="backGo" layoutX="5.0" layoutY="10.0" mnemonicParsing="false" onAction="#backGo" text="뒤로가기" />
+                  <Button fx:id="newBt" layoutX="229.0" layoutY="10.0" mnemonicParsing="false" onAction="#newAction" prefHeight="22.0" prefWidth="64.0" text="신규등록" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="5.0" layoutY="46.0" prefHeight="669.0" prefWidth="290.0" style="-fx-border-color: black;">
+               <children>
+                  <Label alignment="CENTER" layoutX="107.0" layoutY="14.0" text="영화 관리">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="36.0" layoutY="356.0" minWidth="50.0" text="영화NO" />
+                  <TextField fx:id="addNumTf" layoutX="100.0" layoutY="352.0" prefWidth="80.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="36.0" layoutY="386.0" minWidth="50.0" text="영화명" />
+                  <TextField fx:id="addNameTf" layoutX="100.0" layoutY="382.0" prefWidth="160.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="36.0" layoutY="416.0" minWidth="50.0" text="장르" />
+                  <ComboBox fx:id="addGenre" layoutX="100.0" layoutY="412.0" prefWidth="160.0">
+                  		<items>
+            				<FXCollections fx:factory="observableArrayList">
+		            			<String fx:value="없음" />	<String fx:value="가족" />	<String fx:value="공포/호러" />	<String fx:value="드라마" />
+		            			<String fx:value="SF" />	<String fx:value="멜로/로맨스" />	<String fx:value="코미디" />	<String fx:value="애니메이션" />
+		            			<String fx:value="느와르" />	<String fx:value="무협" />	<String fx:value="뮤직" />	<String fx:value="미스터리" />
+		            			<String fx:value="범죄" />	<String fx:value="스릴러" />	<String fx:value="스포츠" />	<String fx:value="아동" />
+		            			<String fx:value="액션" />	<String fx:value="역사" />	<String fx:value="전쟁" />	<String fx:value="재난" />
+		            			<String fx:value="판타지" />
+		            		</FXCollections>
+		            	</items>
+                  </ComboBox>
+                  <Label alignment="CENTER_RIGHT" layoutX="36.0" layoutY="446.0" minWidth="50.0" text="감독" />
+                  <TextField fx:id="addDirecTf" layoutX="100.0" layoutY="442.0" prefWidth="160.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="36.0" layoutY="476.0" minWidth="50.0" text="배우" />
+                  <TextField fx:id="addActorTf" layoutX="100.0" layoutY="472.0" prefWidth="160.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="36.0" layoutY="536.0" minWidth="50.0" text="개봉일" />
+                  <DatePicker fx:id="addDate" layoutX="100.0" layoutY="532.0" prefWidth="160.0" promptText="날짜를 선택하세요." />
+                  <Label alignment="CENTER_RIGHT" layoutX="36.0" layoutY="566.0" minWidth="50.0" text="상영시간" />
+                  <TextField fx:id="addTimeTf" layoutX="100.0" layoutY="562.0" prefWidth="80.0" />
+                  <Button fx:id="addAndModifyBt" layoutX="55.0" layoutY="600.0" mnemonicParsing="false" onAction="#addAndModifyAction" text="등록/수정" />
+                  <Button fx:id="deleteBt" layoutX="164.0" layoutY="600.0" mnemonicParsing="false" onAction="#deleteAction" text="삭제" />
+                  <AnchorPane layoutX="33.0" layoutY="43.0" prefHeight="300.0" prefWidth="225.0" style="-fx-border-color: black;">
+                     <children>
+                        <Label layoutX="6.0" layoutY="7.0" text="포스터" />
+                        <ImageView fx:id="imageView" fitHeight="237.0" fitWidth="176.0" layoutX="25.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="addImage" layoutX="42.0" layoutY="264.0" mnemonicParsing="false" onAction="#addImageAction" text="찾아보기" />
+                        <Button fx:id="delImage" layoutX="120.0" layoutY="264.0" mnemonicParsing="false" onAction="#delImageAction" prefHeight="22.0" prefWidth="64.0" text="삭제" />
+                     </children>
+                  </AnchorPane>
+                  <Label alignment="CENTER_RIGHT" layoutX="36.0" layoutY="506.0" minWidth="50.0" text="관람등급" />
+                  <ComboBox fx:id="addRating" layoutX="100.0" layoutY="502.0" prefHeight="22.0" prefWidth="160.0">
+                  		<items>
+            				<FXCollections fx:factory="observableArrayList">
+		            			<String fx:value="전체관람가" />	<String fx:value="12세관람가" />	<String fx:value="15세관람가" />	<String fx:value="청소년관람불가" />
+		            		</FXCollections>
+		            	</items>
+                  </ComboBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="300.0" prefHeight="720.0" prefWidth="980.0" style="-fx-border-color: black;">
+         <children>
+            <TableView fx:id="movieTable" layoutX="10.0" layoutY="150.0" prefHeight="560.0" prefWidth="960.0">
+              <columns>
+                <TableColumn fx:id="num" editable="true" prefWidth="75.0" resizable="false" sortable="false" text="영화NO" />
+                <TableColumn fx:id="name" editable="true" prefWidth="200.0" resizable="false" sortable="false" text="영화명" />
+                <TableColumn fx:id="genre" editable="true" prefWidth="95.0" resizable="false" sortable="false" text="장르" />
+                <TableColumn fx:id="director" editable="true" prefWidth="145.0" resizable="false" sortable="false" text="감독" />
+                <TableColumn fx:id="actor" editable="true" prefWidth="240.0" resizable="false" sortable="false" text="배우" />
+                <TableColumn fx:id="date" editable="true" prefWidth="110.0" resizable="false" sortable="false" text="개봉일" />
+                <TableColumn fx:id="time" editable="true" prefWidth="90.0" resizable="false" sortable="false" text="상영시간(분)" />
+              </columns>
+            </TableView>
+            <Label layoutX="190.0" layoutY="49.0" text="영화명" />
+            <TextField fx:id="searchNameTf" layoutX="230.0" layoutY="45.0" />
+            <Label layoutX="415.0" layoutY="49.0" text="장르" />
+            <ComboBox fx:id="searchGenre" layoutX="450.0" layoutY="45.0" prefHeight="22.0" prefWidth="161.0">
+            	<items>
+            		<FXCollections fx:factory="observableArrayList">
+            			<String fx:value="전체" />	<String fx:value="가족" />	<String fx:value="공포/호러" />	<String fx:value="드라마" />
+            			<String fx:value="SF" />	<String fx:value="멜로/로맨스" />	<String fx:value="코미디" />	<String fx:value="애니메이션" />
+            			<String fx:value="느와르" />	<String fx:value="무협" />	<String fx:value="뮤직" />	<String fx:value="미스터리" />
+            			<String fx:value="범죄" />	<String fx:value="스릴러" />	<String fx:value="스포츠" />	<String fx:value="아동" />
+            			<String fx:value="액션" />	<String fx:value="역사" />	<String fx:value="전쟁" />	<String fx:value="재난" />
+            			<String fx:value="판타지" />
+            		</FXCollections>
+            	</items>
+            </ComboBox>
+            <Button fx:id="searchBt" layoutX="341.0" layoutY="111.0" mnemonicParsing="false" onAction="#searchAction" text="검색" />
+            <Button fx:id="resetBt" layoutX="430.0" layoutY="111.0" mnemonicParsing="false" onAction="#resetAction" text="초기화" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane style="-fx-background-color: #fef8dc;" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="300.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.admin.AdminMain">
+   <children>
+      <Button fx:id="movieEditBt" layoutX="20.0" layoutY="50.0" mnemonicParsing="false" onAction="#movieEditAction" prefHeight="60.0" prefWidth="120.0" text="영화관리" />
+      <Button fx:id="theaterEditBt" layoutX="160.0" layoutY="50.0" mnemonicParsing="false" onAction="#theaterEditAction" prefHeight="60.0" prefWidth="120.0" text="극장/상영관관리"/>
+      <Button fx:id="salesBt" onAction="#salesBtAction" layoutX="20.0" layoutY="140.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" text="매출" />
+      <Button fx:id="userEditBt" onAction="#userEditAction" layoutX="114.0" layoutY="14.0" mnemonicParsing="false" text="내정보수정" />
+      <Button fx:id="logoutBt" layoutX="216.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutAction" text="로그아웃" />
+      <Button fx:id="userListBt" onAction="#userListAction" layoutX="160.0" layoutY="140.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="120.0" text="회원목록" />
+      <Label fx:id="userId" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="20.0" layoutY="18.0" prefHeight="14.0" prefWidth="76.0" />
+   </children>
+</AnchorPane>

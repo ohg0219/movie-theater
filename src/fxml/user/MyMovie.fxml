@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="400.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.user.MyMovie">
+   <children>
+  	 <Label fx:id="userId" visible="false" />
+      <Button fx:id="closeBt" layoutX="350.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeAction" text="닫기" />
+      <ScrollPane hbarPolicy="NEVER" layoutX="5.0" layoutY="75.0" prefHeight="300.0" prefWidth="390.0">
+        <content>
+            <GridPane fx:id="movieList" >
+               
+         	</GridPane>
+         </content>
+      </ScrollPane>
+      <ComboBox fx:id="yearCombo" layoutX="104.0" layoutY="47.0" prefHeight="22.0" prefWidth="100.0" />
+      <Button fx:id="yearSearch" layoutX="214.0" layoutY="47.0" mnemonicParsing="false" onAction="#yearSearchAction" text="조회" />
+   </children>
+</AnchorPane>
